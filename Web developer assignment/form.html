@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f9f9f9;
+        }
+        .form-container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+        }
+        .form-container h1 {
+            margin-top: 0;
+            margin-bottom: 40px;
+            text-align: left; /* Align the text to the left */
+        }
+        .input-group {
+            margin-bottom: 40px;
+            position: relative;
+        }
+        .input-group input {
+            width: 100%;
+            border: none;
+            border-bottom: 1px solid #ccc;
+            padding: 8px 0;
+            font-size: 16px;
+            outline: none; /* Removes the default outline on focus */
+        }
+        .input-group input::placeholder {
+            color: lightgrey;
+        }
+        .input-group label {
+            position: absolute;
+            top: -20px;
+            left: 0;
+            color: lightgrey;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+        .input-group-inline {
+            display: flex;
+            justify-content: space-between;
+        }
+        .input-group-inline .input-group {
+            width: 48%;
+        }
+        .checkbox-group {
+            display: flex;
+            align-items: flex-start; /* Align items at the top */
+            margin-bottom: 20px; /* Add margin to align with other inputs */
+        }
+        .checkbox-group input {
+            margin-top: 2px; /* Adjust vertical alignment */
+            margin-right: 10px;
+            border: pink;
+        }
+        .checkbox-group label {
+            color: lightgrey;
+            font-size: 14px;
+            margin-bottom: 10px; /* Add margin bottom */
+        }
+        .form-container button {
+            width: 100%; /* Make the button width equal to the form width */
+            padding: 10px;
+            background-color: rgb(250, 55, 152); /* Set button background to pink */
+            color: white; /* Set button text color to white */
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            font-weight: bold; /* Set button text to bold */
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Talk to us</h1>
+        <form action="https://getform.io/f/panvgjxa" method="POST">
+            <div class="input-group">
+                <label for="workEmail" id="labelWorkEmail">Work email*</label>
+                <input type="email" id="workEmail" name="workEmail" required oninput="updateLabel(this, 'labelWorkEmail', 'Work email')">
+            </div>
+            <div class="input-group-inline">
+                <div class="input-group">
+                    <label for="firstName" id="labelFirstName">First name*</label>
+                    <input type="text" id="firstName" name="firstName" required oninput="updateLabel(this, 'labelFirstName', 'First name')">
+                </div>
+                <div class="input-group">
+                    <label for="lastName" id="labelLastName">Last name*</label>
+                    <input type="text" id="lastName" name="lastName" required oninput="updateLabel(this, 'labelLastName', 'Last name')">
+                </div>
+            </div>
+            <div class="checkbox-group">
+                <input type="checkbox" id="subscribe" name="subscribe">
+                <label for="subscribe">I agree to Fyle's terms and conditions, and provide consent to send me communication</label>
+            </div>
+            <button type="submit">Contact Us</button>
+        </form>
+    </div>
+
+    <script>
+        function updateLabel(inputElement, labelId, newText) {
+            const label = document.getElementById(labelId);
+            if (inputElement.value.length > 0) {
+                label.textContent = newText;
+                label.style.color = 'lightgrey';
+            } else {
+                label.textContent = newText + '*';
+                label.style.color = 'lightgrey';
+            }
+        }
+    </script>
+</body>
+</html>
