@@ -15,8 +15,7 @@ Ensure you have the following installed:
 
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/your-username/Fyle_Assignment.git
-   cd Fyle_Assignment
+   git clone https://github.com/krishnabu/Fyle_Assignment.git
 2. Open the Project in VS Code
 
 3. Open Visual Studio Code.
